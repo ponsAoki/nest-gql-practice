@@ -20,7 +20,8 @@ export class AuthorResolver {
 
   @Query(() => Author, { name: 'author' })
   async getAuthor(@Args('id', { type: () => Int }) id: number) {
-    return this.authorService.findOneById(id);
+    // return this.authorService.findOneById(id);
+    console.log(`id: ${id}`);
   }
 
   @ResolveField('posts', () => [Post])
